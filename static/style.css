@@ -1,0 +1,333 @@
+.app
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body {
+font-family: Arial, sans-serif;
+min-height: 100vh;background: #00004d;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+}
+
+/* =========================
+AUTH CONTAINER (LOGIN/REGISTER)
+========================= */
+
+.container {
+background: #00004d;
+padding: 30px;
+border-radius: 10px;
+width: 350px;
+box-shadow: 0 0 10px #ffa200;
+margin: 100px auto;
+}
+
+h1 {
+text-align: center;
+margin-bottom: 20px;
+color: #ffae00;
+}
+
+input {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border: 1px solid #d1d5db;
+border-radius: 5px;
+font-size: 14px;
+}
+
+button {
+width: 100%;
+padding: 10px;
+background: #2563eb;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+margin-top: 10px;
+}
+
+button:hover {
+background: #1d4ed8;
+}
+
+p {
+text-align: center;
+margin-top: 15px;
+font-size: 14px;
+}
+
+a {
+color: #2563eb;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard{
+    width:100%;
+    min-height:100vh;
+    padding:40px;
+    text-align:center;
+    color:#fff;
+}
+
+.dashboard h1{
+    color:#ffa200;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#d1d5db;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+/* =========================
+   CARD GRID
+========================= */
+
+.grid{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:25px;
+    flex-wrap:nowrap;
+    width:100%;
+    flex-direction: row; 
+
+}
+
+.dashboard {
+width: 100%;
+padding: 40px;
+text-align: center;
+color: #ffffff;
+}
+
+/* 🔥 THIS IS THE KEY FIX /
+.grid {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: stretch;
+gap: 20px;
+flex-wrap: wrap;
+margin-top: 30px;
+}
+/ Dashboard cards */
+.dashboard .card {
+background: white;
+width: 250px;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 8px 20px rgba(109, 120, 236, 0.514);
+transition: 0.3s ease;
+cursor: pointer;
+text-align: left;
+}
+
+.dashboard .card:hover {
+transform: translateY(-6px);
+}
+
+/* Card text */
+.dashboard .card h2 {
+margin-bottom: 10px;
+color: #2563eb;
+}
+
+.dashboard .card p {
+color: #555;
+font-size: 14px;
+}
+
+.card:nth-child(2){
+    color: #3434c5 ;
+}
+
+/* =========================
+TOP BAR (optional if used)
+========================= */
+
+.topbar {
+width: 100%;
+padding: 15px 30px;
+background: #ffa200;
+color: #00004d;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-weight: bold;
+}
+
+.logout {
+color: white;
+text-decoration: none;
+background: #ef4444;
+padding: 6px 12px;
+border-radius: 6px;
+}
+
+.logout:hover {
+background: #dc2626;
+}/* =========================
+QUIZ UI ENHANCEMENT (ADD ONLY)
+========================= */
+
+/* Make quiz area cleaner */
+#quiz {
+width: 100%;
+max-width: 650px;
+margin: 40px auto;
+color: #ffa200;
+padding: 10px;
+}
+
+/* Better question styling */
+#quiz h3 {
+font-size: 22px;
+font-weight: 600;
+margin-bottom: 22px;
+color: #ffffff;
+text-align: center;
+letter-spacing: 0.3px;
+}
+
+/* Option cards upgrade */
+.option {
+display: block;
+padding: 15px;
+margin: 10px 0;
+
+background: #00004d;  
+color: #00004d;  
+
+border-radius: 14px;  
+cursor: pointer;  
+
+transition: all 0.2s ease;  
+
+text-align: center;  
+font-size: 15px;  
+font-weight: 500;  
+
+box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+
+}
+
+/* Hover effect */
+.option:hover {
+transform: translateY(-2px);
+background: #dbeafe;
+}
+
+/* Selected option (important highlight) */
+.option.selected {
+background: #2563eb;
+color: white;
+box-shadow: 0 0 18px rgba(37, 99, 235, 0.55);
+}
+
+/* Button polish only (no logic impact) */
+button {
+width: 100%;
+max-width: 650px;
+padding: 14px;
+margin: 25px auto;
+display: block;
+
+background: #22c55e;  
+color: white;  
+
+border: none;  
+border-radius: 14px;  
+
+font-size: 16px;  
+cursor: pointer;  
+
+transition: 0.2s ease;
+
+}
+
+button:hover {
+background: #16a34a;
+transform: scale(1.03);
+}/* =========================
+ASSESSMENT COLOR THEME
+========================= */
+
+body {
+background: #00004d; /* deep AI blue background */
+}
+
+/* Quiz container area */
+#quiz {
+background: transparent;
+color: white;
+}
+
+/* Question text */
+#quiz h3 {
+color: #ffffff;
+}
+
+/* Option cards */
+.option {
+background: #ffa200;
+color: #ffffff;
+}
+
+/* Hover effect */
+.option:hover {
+background: #dbeafe;
+}
+
+/* Selected option */
+.option.selected {
+background: #2563eb;
+color: white;
+}
+
+/* Next button */
+button {
+background: #22c55e;
+color: white;
+}
+
+button:hover {
+background: #16a34a;
+}
+.roadmap-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:10px 18px;
+    background:#22c55e;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.roadmap-btn:hover{
+    background:#16a34a;
+    transform:translateY(-2px);
+}
