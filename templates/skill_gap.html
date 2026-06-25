@@ -1,0 +1,273 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Skill Gap Analyzer</title><style>
+
+    body{
+        font-family: Arial, sans-serif;
+        background:#0b1d51;
+        color:white;
+        padding:30px;
+    }
+
+    .container{
+        max-width:900px;
+        margin:auto;
+    }
+
+    .card{
+        background:white;
+        color:black;
+        padding:20px;
+        border-radius:15px;
+        margin-top:20px;
+    }
+
+    select{
+        width:100%;
+        padding:12px;
+        border-radius:10px;
+        margin-bottom:20px;
+    }
+
+    button{
+        background:#ff9800;
+        color:white;
+        border:none;
+        padding:12px 20px;
+        border-radius:10px;
+        cursor:pointer;
+        font-size:16px;
+    }
+
+    button:hover{
+        opacity:0.9;
+    }
+
+    .skills{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+        gap:10px;
+        margin-top:20px;
+    }
+
+    .result{
+        margin-top:20px;
+    }
+
+    .score{
+        font-size:24px;
+        font-weight:bold;
+        color:green;
+    }
+
+</style>
+
+</head><body><div class="container"><h1>🔍 Skill Gap Analyzer</h1>
+
+<div class="card">
+
+    <label>Select Career</label>
+
+    <select id="career" onchange="loadSkills()">
+
+        <option>Software Engineer</option>
+        <option>Data Scientist</option>
+        <option>Cyber Security Analyst</option>
+        <option>UI/UX Designer</option>
+        <option>Graphic Designer</option>
+        <option>Psychologist</option>
+        <option>Teacher</option>
+        <option>Business Analyst</option>
+        <option>Marketing Manager</option>
+        <option>Mechanical Engineer</option>
+        <option>Civil Engineer</option>
+
+    </select>
+
+    <h3>Select Skills You Already Have</h3>
+
+    <div id="skillsContainer" class="skills"></div>
+
+    <br>
+
+    <button onclick="analyze()">
+        Analyze Skills
+    </button>
+
+    <div id="result" class="result"></div>
+
+</div>
+
+</div><script>
+
+const careerSkills = {
+
+    "Software Engineer": [
+        "Python","Java","DSA","Git","SQL"
+    ],
+
+    "Data Scientist": [
+        "Python","Statistics","SQL",
+        "Machine Learning","Data Visualization"
+    ],
+
+    "Cyber Security Analyst": [
+        "Networking","Linux","Python",
+        "Ethical Hacking","Security Fundamentals"
+    ],
+
+    "UI/UX Designer": [
+        "Figma","Wireframing",
+        "User Research","Prototyping",
+        "Design Thinking"
+    ],
+
+    "Graphic Designer": [
+        "Photoshop","Illustrator",
+        "Typography","Branding",
+        "Creativity"
+    ],
+
+    "Psychologist": [
+        "Communication","Empathy",
+        "Research","Counselling",
+        "Observation"
+    ],
+
+    "Teacher": [
+        "Communication",
+        "Subject Knowledge",
+        "Presentation Skills",
+        "Classroom Management",
+        "Leadership"
+    ],
+
+    "Business Analyst": [
+        "Excel","SQL","Power BI",
+        "Communication","Problem Solving"
+    ],
+
+    "Marketing Manager": [
+        "SEO",
+        "Social Media Marketing",
+        "Content Marketing",
+        "Analytics",
+        "Communication"
+    ],
+
+    "Mechanical Engineer": [
+        "CAD",
+        "Mathematics",
+        "Physics",
+        "Manufacturing",
+        "Problem Solving"
+    ],
+
+    "Civil Engineer": [
+        "AutoCAD",
+        "Surveying",
+        "Structural Design",
+        "Project Management",
+        "Mathematics"
+    ]
+
+};
+
+function loadSkills(){
+
+    const career =
+        document.getElementById("career").value;
+
+    const skills =
+        careerSkills[career];
+
+    let html = "";
+
+    skills.forEach(skill => {
+
+        html += `
+        <label>
+            <input
+                type="checkbox"
+                value="${skill}"
+                class="skillCheck"
+            >
+            ${skill}
+        </label>
+        `;
+    });
+
+    document.getElementById(
+        "skillsContainer"
+    ).innerHTML = html;
+}
+
+function analyze(){
+
+    const career =
+        document.getElementById("career").value;
+
+    const required =
+        careerSkills[career];
+
+    const checks =
+        document.querySelectorAll(".skillCheck");
+
+    let have = [];
+    let missing = [];
+
+    checks.forEach((c,index)=>{
+
+        if(c.checked){
+            have.push(required[index]);
+        }
+        else{
+            missing.push(required[index]);
+        }
+
+    });
+
+    let score =
+        Math.round(
+            (have.length / required.length) * 100
+        );
+
+    let html = `
+
+        <h2>${career}</h2>
+
+        <p class="score">
+            Readiness Score: ${score}%
+        </p>
+
+        <h3>✅ Skills You Have</h3>
+
+        <ul>
+            ${have.map(
+                s=>`<li>${s}</li>`
+            ).join("")}
+        </ul>
+
+        <h3>❌ Skills To Learn</h3>
+
+        <ul>
+            ${missing.map(
+                s=>`<li>${s}</li>`
+            ).join("")}
+        </ul>
+
+        <h3>
+            🎯 Next Skill To Learn:
+            ${missing[0] || "You're job ready!"}
+        </h3>
+    `;
+
+    document.getElementById(
+        "result"
+    ).innerHTML = html;
+}
+
+loadSkills();
+
+</script></body>
+</html>
