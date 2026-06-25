@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Assessment</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Navbar -->
+    <div class="topbar">
+        <div class="logo">🎯 AI Career Guide</div>
+        <a href="/dashboard" class="logout">Dashboard</a>
+    </div>
+
+    <div id="quiz">
+
+        <h1>Career Assessment</h1>
+
+        <form action="/result" method="POST">
+
+            <!-- Question 1 -->
+            <h3>1. Which activity do you enjoy the most?</h3>
+
+            <label class="option">
+                <input type="radio" name="q1" value="q1_a" required>
+                Solving logical puzzles and brain teasers
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="q1_b">
+                Designing artwork or creating content
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="q1_c">
+                Helping friends solve their problems
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="q1_d">
+                Organizing events or leading a team
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="q1_e">
+                Building apps or fixing gadgets
+            </label>
+
+            <!-- Question 2 -->
+            <h3>2. In a group project, what role do you usually take?</h3>
+
+            <label class="option">
+                <input type="radio" name="q2" value="q2_a" required>
+                Data analyst and planner
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="q2_b">
+                Designer and creative thinker
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="q2_c">
+                Communicator and coordinator
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="q2_d">
+                Team leader
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="q2_e">
+                Technical developer
+            </label>
+
+            <!-- Question 3 -->
+            <h3>3. Which subject interests you the most?</h3>
+
+            <label class="option">
+                <input type="radio" name="q3" value="q3_a" required>
+                Mathematics
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="q3_b">
+                Art or Literature
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="q3_c">
+                Psychology or Sociology
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="q3_d">
+                Commerce or Economics
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="q3_e">
+                Computer Science
+            </label>
+
+            <!-- Question 4 -->
+            <h3>4. What motivates you the most?</h3>
+
+            <label class="option">
+                <input type="radio" name="q4" value="q4_a" required>
+                Solving difficult problems
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="q4_b">
+                Expressing creativity
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="q4_c">
+                Helping people
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="q4_d">
+                Achieving business success
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="q4_e">
+                Learning new technologies
+            </label>
+
+            <!-- Question 5 -->
+            <h3>5. How do you prefer spending your free time?</h3>
+
+            <label class="option">
+                <input type="radio" name="q5" value="q5_a" required>
+                Playing strategy games
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="q5_b">
+                Drawing or writing
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="q5_c">
+                Volunteering
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="q5_d">
+                Planning future goals
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="q5_e">
+                Coding projects
+            </label>
+        <!-- Question 6 -->
+            <h3>6. Which workplace appeals to you the most?</h3>
+
+            <label class="option">
+                <input type="radio" name="q6" value="q6_a" required>
+                Research laboratory
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="q6_b">
+                Design studio
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="q6_c">
+                School or counseling center
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="q6_d">
+                Corporate office
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="q6_e">
+                Software company
+            </label>
+
+            <!-- Question 7 -->
+            <h3>7. What is your biggest strength?</h3>
+
+            <label class="option">
+                <input type="radio" name="q7" value="q7_a" required>
+                Logical thinking
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="q7_b">
+                Creativity
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="q7_c">
+                Communication
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="q7_d">
+                Decision making and leadership
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="q7_e">
+                Technical skills
+            </label>
+
+            <!-- Question 8 -->
+            <h3>8. Which type of project excites you the most?</h3>
+
+            <label class="option">
+                <input type="radio" name="q8" value="q8_a" required>
+                Data analysis project
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="q8_b">
+                Graphic or UI design project
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="q8_c">
+                Community service project
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="q8_d">
+                Business startup
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="q8_e">
+                Software development
+            </label>
+
+            <!-- Question 9 -->
+            <h3>9. How do you solve a difficult problem?</h3>
+
+            <label class="option">
+                <input type="radio" name="q9" value="q9_a" required>
+                Analyze it step by step
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="q9_b">
+                Think of creative solutions
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="q9_c">
+                Discuss with others
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="q9_d">
+                Take charge and decide quickly
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="q9_e">
+                Use technology to solve it
+            </label>
+
+            <!-- Question 10 -->
+            <h3>10. Which career interests you the most?</h3>
+
+            <label class="option">
+                <input type="radio" name="q10" value="q10_a" required>
+                Data Scientist
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="q10_b">
+                Graphic Designer
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="q10_c">
+                Psychologist
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="q10_d">
+                Marketing Manager
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="q10_e">
+                Software Engineer
+            </label>
+        <!-- Question 11 -->
+            <h3>11. What type of work do you enjoy the most?</h3>
+
+            <label class="option">
+                <input type="radio" name="q11" value="q11_a" required>
+                Finding patterns in data
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="q11_b">
+                Creating unique designs
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="q11_c">
+                Teaching or mentoring others
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="q11_d">
+                Managing business projects
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="q11_e">
+                Developing software applications
+            </label>
+
+            <!-- Question 12 -->
+            <h3>12. Which achievement would make you happiest?</h3>
+
+            <label class="option">
+                <input type="radio" name="q12" value="q12_a" required>
+                Solving a complex research problem
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="q12_b">
+                Designing an award-winning product
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="q12_c">
+                Making a positive impact on people's lives
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="q12_d">
+                Building a successful company
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="q12_e">
+                Creating an innovative application
+            </label>
+
+            <!-- Question 13 -->
+            <h3>13. Which tool would you prefer to use?</h3>
+
+            <label class="option">
+                <input type="radio" name="q13" value="q13_a" required>
+                Spreadsheet or calculator
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="q13_b">
+                Photoshop or Figma
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="q13_c">
+                Video conferencing or communication tools
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="q13_d">
+                Business analytics dashboard
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="q13_e">
+                Programming IDE (VS Code, PyCharm)
+            </label>
+
+            <!-- Question 14 -->
+            <h3>14. What type of challenge excites you?</h3>
+
+            <label class="option">
+                <input type="radio" name="q14" value="q14_a" required>
+                Solving logical and analytical problems
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="q14_b">
+                Creating something original
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="q14_c">
+                Working with and helping people
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="q14_d">
+                Leading a team toward success
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="q14_e">
+                Building technical systems
+            </label>
+
+            <!-- Question 15 -->
+            <h3>15. Which career would you choose if given complete freedom?</h3>
+
+            <label class="option">
+                <input type="radio" name="q15" value="q15_a" required>
+                Research Scientist
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="q15_b">
+                Creative Designer
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="q15_c">
+                Teacher or Counselor
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="q15_d">
+                Entrepreneur
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="q15_e">
+                Software Engineer
+            </label>
+
+            <button type="submit">View Career Results</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

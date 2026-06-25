@@ -1,0 +1,43 @@
+<!DOCTYPE html>  <html>  
+<head>  
+    <title>AI Career Guide Dashboard</title>  
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/style.css') }}">  
+</head>  <body>  <div class="app">  <!-- TOP BAR -->  
+<div class="topbar">  
+    <div class="logo">🎯 AI Career Guide</div>  
+    <div class="user">  
+        <a href="/" class="logout">Logout</a>  
+    </div>  
+</div>  
+
+<!-- MAIN DASHBOARD -->  
+<div class="dashboard">  
+
+    <h1>Welcome 👋</h1>  
+    <p class="subtitle">Choose what you want to explore</p>  
+
+    <div class="grid">  
+
+        <div class="card" onclick="location.href='/assessment'">  
+            
+            <h2> Career Assessment</h2>  
+            <p>Find careers based on your personality & interests. </p>  
+        </div>  
+
+        <div class="card" onclick="location.href='/skill-gap'">
+            <h3> Skill Gap Analyzer</h3>
+             <p>Find skills you need for your dream career</p>
+         </div>
+
+        <div class="card" onclick="location.href='/learning-links'">  
+             <h2> 📚 Learning Links</h2>  
+             <p>Free courses, certifications & resources</p>  
+         </div>
+
+      
+    </div>  
+
+</div>
+
+</div>  </body>  
+</html>
