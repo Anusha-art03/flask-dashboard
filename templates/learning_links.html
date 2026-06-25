@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career Learning Hub</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background: #0b1d51;
+            color: white;
+            padding: 30px;
+            margin: 0;
+        }
+
+        header{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1{
+            color: #ff9800;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p{
+            font-size: 18px;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .container{
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .card{
+            background: white;
+            color: black;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.25);
+        }
+
+        select{
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 2px solid #0b1d51;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button{
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 14px 22px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            background: #e68900;
+        }
+
+        hr{
+            margin: 25px 0;
+        }
+
+        h2{
+            color: #0b1d51;
+        }
+
+        h3{
+            color: #ff9800;
+            margin-top: 20px;
+        }
+
+        a{
+            display: block;
+            margin: 10px 0;
+            color: #0b1d51;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+        footer{
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #ff9800;
+        }
+
+        footer p{
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>🚀 Career Learning Hub</h1>
+
+    <p>
+        Explore industry-approved learning paths,
+        courses, YouTube channels and practice platforms
+        to become job-ready in 2026.
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <select id="career">
+
+            <option>Software Engineer</option>
+            <option>Data Scientist</option>
+            <option>Cyber Security Analyst</option>
+            <option>UI/UX Designer</option>
+            <option>Graphic Designer</option>
+            <option>Psychologist</option>
+            <option>Teacher</option>
+            <option>Business Analyst</option>
+            <option>Marketing Manager</option>
+            <option>Mechanical Engineer</option>
+            <option>Civil Engineer</option>
+
+        </select>
+
+
+        <button onclick="showResources()">
+            Show Resources
+        </button>
+
+
+        <div id="resources"></div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+let resources = {
+    "Software Engineer": {
+
+    youtube: [
+        ["freeCodeCamp Full Stack", "https://www.youtube.com/@freecodecamp"],
+        ["CodeWithHarry", "https://www.youtube.com/@CodeWithHarry"],
+        ["Apna College", "https://www.youtube.com/@ApnaCollegeOfficial"],
+        ["Hitesh Choudhary", "https://www.youtube.com/@HiteshCodeLab"]
+    ],
+
+    course: [
+        ["The Odin Project", "https://www.theodinproject.com/"]
+    ],
+
+    practice: [
+        ["LeetCode", "https://leetcode.com/"],
+        ["GitHub", "https://github.com/"]
+    ],
+
+    roadmap:
+    "Programming Fundamentals → DSA → Web Development → Build Projects → GitHub → Internship → Software Engineer"
+},
+
+
+"Data Scientist": {
+
+    youtube: [
+        ["Krish Naik", "https://www.youtube.com/@KrishNaik06"],
+        ["freeCodeCamp Data Science", "https://www.youtube.com/@freecodecamp"],
+        ["Alex The Analyst", "https://www.youtube.com/@AlexTheAnalyst"]
+    ],
+
+    course: [
+        ["Google Data Analytics", "https://www.coursera.org/professional-certificates/google-data-analytics"]
+    ],
+
+    practice: [
+        ["Kaggle", "https://www.kaggle.com/"],
+        ["Google Colab", "https://colab.research.google.com/"]
+    ],
+
+    roadmap:
+    "Python → Statistics → SQL → Pandas → Machine Learning → Deep Learning → Projects → Portfolio"
+},
+
+
+"Cyber Security Analyst": {
+
+    youtube: [
+        ["NetworkChuck", "https://www.youtube.com/@NetworkChuck"],
+        ["John Hammond", "https://www.youtube.com/@_JohnHammond"],
+        ["LiveOverflow", "https://www.youtube.com/@LiveOverflow"],
+        ["freeCodeCamp Cyber Security", "https://www.youtube.com/@freecodecamp"]
+    ],
+
+    course: [
+        ["Cybrary Cyber Security Courses", "https://www.cybrary.it/"],
+        ["IBM Cyber Security Analyst", "https://www.coursera.org/professional-certificates/ibm-cybersecurity-analyst"]
+    ],
+
+    practice: [
+        ["TryHackMe Labs", "https://tryhackme.com/"],
+        ["Hack The Box", "https://academy.hackthebox.com/"],
+        ["OverTheWire", "https://overthewire.org/wargames/"]
+    ],
+
+    roadmap:
+    "Networking → Linux → Security Basics → Ethical Hacking → SIEM → SOC Skills → Security Analyst"
+},
+
+
+"UI/UX Designer": {
+
+    youtube: [
+        ["DesignCourse", "https://www.youtube.com/@DesignCourse"],
+        ["Figma Official", "https://www.youtube.com/@Figma"],
+        ["Flux Academy", "https://www.youtube.com/@FluxAcademy"],
+        ["Jesse Showalter", "https://www.youtube.com/@JesseShowalter"]
+    ],
+
+    course: [
+        ["Google UX Design Certificate", "https://www.coursera.org/professional-certificates/google-ux-design"],
+        ["Figma Learn", "https://help.figma.com/"]
+    ],
+
+    practice: [
+        ["Figma Community", "https://www.figma.com/community"],
+        ["Dribbble", "https://dribbble.com/"],
+        ["Behance", "https://www.behance.net/"]
+    ],
+
+    roadmap:
+    "Design Principles → Figma → Wireframes → UI Design → UX Research → Prototypes → Portfolio"
+},
+
+
+"Graphic Designer": {
+
+    youtube: [
+        ["Envato Tuts+", "https://www.youtube.com/@EnvatoTutsPlus"],
+        ["Adobe Creative Cloud", "https://www.youtube.com/@AdobeCreativeCloud"],
+        ["The Futur", "https://www.youtube.com/@thefutur"],
+        ["Satori Graphics", "https://www.youtube.com/@SatoriGraphics"]
+    ],
+
+    course: [
+        ["Canva Design School", "https://www.canva.com/designschool/"],
+        ["Adobe Creative Cloud Tutorials", "https://creativecloud.adobe.com/learn"]
+    ],
+
+    practice: [
+        ["Behance Portfolio", "https://www.behance.net/"],
+        ["Dribbble Challenges", "https://dribbble.com/"],
+        ["99Designs Inspiration", "https://99designs.com/"]
+    ],
+
+    roadmap:
+    "Color Theory → Typography → Photoshop → Illustrator → Branding → Portfolio → Freelancing"
+},
+
+
+"Psychologist": {
+
+    youtube: [
+        ["Psych2Go", "https://www.youtube.com/@Psych2Go"],
+        ["CrashCourse Psychology", "https://www.youtube.com/@crashcourse"],
+        ["Kati Morton", "https://www.youtube.com/@KatiMorton"],
+        ["The School of Life", "https://www.youtube.com/@theschooloflifetv"]
+    ],
+
+    course: [
+        ["Introduction to Psychology - Coursera",
+        "https://www.coursera.org/learn/introduction-psychology"],
+
+        ["Noba Psychology Resources",
+        "https://nobaproject.com/"]
+    ],
+
+    practice: [
+        ["APA Psychology Resources",
+        "https://www.apa.org/"],
+
+        ["Psychology Today Articles",
+        "https://www.psychologytoday.com/"]
+    ],
+
+    roadmap:
+    "Psychology Basics → Human Behavior → Counseling Skills → Specialization → Internship → Professional Practice"
+},
+
+
+"Teacher": {
+
+    youtube: [
+        ["Adda247 Teaching Exams",
+        "https://www.youtube.com/@Adda247"],
+
+        ["Unacademy Teaching Exams",
+        "https://www.youtube.com/@Unacademy"],
+
+        ["Teacher Toolkit",
+        "https://www.youtube.com/@TeacherToolkit"]
+    ],
+
+    course: [
+        ["Khan Academy Teaching Resources",
+        "https://www.khanacademy.org/"],
+
+        ["Learning How to Learn - Coursera",
+        "https://www.coursera.org/learn/learning-how-to-learn"]
+    ],
+
+    practice: [
+        ["NCERT Resources",
+        "https://ncert.nic.in/"],
+
+        ["DIKSHA Platform",
+        "https://diksha.gov.in/"]
+    ],
+
+    roadmap:
+    "Subject Knowledge → Teaching Skills → B.Ed/D.El.Ed → CTET/TET → Classroom Experience → Career Growth"
+},
+
+
+"Business Analyst": {
+
+    youtube: [
+        ["Alex The Analyst",
+        "https://www.youtube.com/@AlexTheAnalyst"],
+
+        ["freeCodeCamp Business Analysis",
+        "https://www.youtube.com/@freecodecamp"],
+
+        ["Simplilearn Business Analyst",
+        "https://www.youtube.com/@SimplilearnOfficial"]
+    ],
+
+    course: [
+        ["Google Business Intelligence Certificate",
+        "https://www.coursera.org/professional-certificates/google-business-intelligence"],
+
+        ["IIBA Business Analysis",
+        "https://www.iiba.org/"]
+    ],
+
+    practice: [
+        ["SQLBolt",
+        "https://sqlbolt.com/"],
+
+        ["Kaggle Data Practice",
+        "https://www.kaggle.com/"]
+    ],
+
+    roadmap:
+    "Excel → SQL → Data Analysis → Power BI/Tableau → Business Thinking → Projects → Business Analyst Role"
+},
+
+
+"Marketing Manager": {
+
+    youtube: [
+        ["HubSpot",
+        "https://www.youtube.com/@HubSpot"],
+
+        ["Neil Patel",
+        "https://www.youtube.com/@neilpatel"],
+
+        ["Google Digital Marketing",
+        "https://www.youtube.com/@Google"]
+    ],
+
+    course: [
+        ["HubSpot Academy",
+        "https://academy.hubspot.com/"],
+
+        ["Google Digital Garage",
+        "https://grow.google/intl/en_in/"]
+    ],
+
+    practice: [
+        ["Google Analytics",
+        "https://analytics.google.com/"],
+
+        ["Meta Blueprint",
+        "https://www.facebook.com/business/learn"]
+    ],
+
+    roadmap:
+    "Marketing Basics → SEO → Social Media → Paid Ads → Analytics → Strategy → Brand Management"
+},
+
+
+"Mechanical Engineer": {
+
+    youtube: [
+        ["NPTEL Mechanical Engineering",
+        "https://www.youtube.com/@nptelhrd"],
+
+        ["Learn Engineering",
+        "https://www.youtube.com/@LearnEngineering"],
+
+        ["Engineering Funda",
+        "https://www.youtube.com/@EngineeringFunda"],
+
+        ["Gate Smashers Engineering",
+        "https://www.youtube.com/@GateSmashers"]
+    ],
+
+    course: [
+        ["NPTEL Mechanical Courses",
+        "https://nptel.ac.in/course.html"],
+
+        ["MIT OpenCourseWare Mechanical Engineering",
+        "https://ocw.mit.edu/"]
+    ],
+
+    practice: [
+        ["GrabCAD Design Community",
+        "https://grabcad.com/"],
+
+        ["Autodesk Student Resources",
+        "https://www.autodesk.com/education"]
+    ],
+
+    roadmap:
+    "Engineering Mechanics → Thermodynamics → Fluid Mechanics → CAD → Projects → Internship → Mechanical Engineer"
+},
+
+
+"Civil Engineer": {
+
+    youtube: [
+        ["NPTEL Civil Engineering",
+        "https://www.youtube.com/@nptelhrd"],
+
+        ["The Engineering Mindset",
+        "https://www.youtube.com/@TheEngineeringMindset"],
+
+        ["Civil Engineering Academy",
+        "https://www.youtube.com/@CivilEngineeringAcademy"],
+
+        ["Practical Civil Engineer",
+        "https://www.youtube.com/@PracticalCivilEngineer"]
+    ],
+
+    course: [
+        ["NPTEL Civil Engineering Courses",
+        "https://nptel.ac.in/course.html"],
+
+        ["MIT OpenCourseWare Civil Engineering",
+        "https://ocw.mit.edu/"]
+    ],
+
+    practice: [
+        ["Autodesk Civil 3D Learning",
+        "https://www.autodesk.com/education"],
+
+        ["SourceCAD Tutorials",
+        "https://sourcecad.com/"]
+    ],
+
+    roadmap:
+    "Engineering Basics → Structural Analysis → Surveying → AutoCAD/Civil 3D → Site Training → Internship → Civil Engineer"
+}
+};
+
+function showResources() {
+
+    let career = document.getElementById("career").value;
+
+    let r = resources[career];
+
+    let youtubeLinks = "";
+    let courseLinks = "";
+    let practiceLinks = "";
+
+
+    r.youtube.forEach(item => {
+
+        youtubeLinks += `
+        <a href="${item[1]}" target="_blank">
+            ${item[0]}
+        </a>`;
+
+    });
+
+
+    r.course.forEach(item => {
+
+        courseLinks += `
+        <a href="${item[1]}" target="_blank">
+            ${item[0]}
+        </a>`;
+
+    });
+
+
+    r.practice.forEach(item => {
+
+        practiceLinks += `
+        <a href="${item[1]}" target="_blank">
+            ${item[0]}
+        </a>`;
+
+    });
+
+
+    document.getElementById("resources").innerHTML = `
+
+        <hr>
+
+        <h2>🚀 ${career}</h2>
+
+        <h3>🎥 YouTube Resources</h3>
+        ${youtubeLinks}
+
+
+        <h3>📖 Free Courses</h3>
+        ${courseLinks}
+
+
+        <h3>💻 Practice Platforms</h3>
+        ${practiceLinks}
+
+
+        <h3>🗺️ Career Roadmap</h3>
+
+        <p>
+            ${r.roadmap}
+        </p>
+
+    `;
+
+}
+
+
+// Automatically show first career on opening page
+showResources();
+
+</script>
+
+
+<footer>
+
+    <p>
+        © 2026 Career Learning Hub |
+        Designed to guide students toward industry-ready skills.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
